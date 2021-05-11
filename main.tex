@@ -1,0 +1,111 @@
+%Dies ist nur ein Muster, es wird keine Gewährleistung auf Korrektheit gegeben! 
+
+% Format des Dokuments
+%    article - Kleinere Schriftwerke, ohne Titelblatt und nur mit einseitigem Druck
+%    report - Mittlere Schriftwerke, mit Titelblatt und einseitigem Druck
+%    book   - Große Schriftwerke, mit Titelblatt und zweiseitigem Druck
+%    letter - Für Briefe 
+\documentclass[
+	a4paper, 
+	11pt
+	]{scrreprt}
+	
+\usepackage{blindtext}
+
+% deutsche Silbentrennung
+\usepackage[ngerman]{babel}
+
+% Deutsche Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Einbinden von Bildern
+\usepackage{graphicx}
+
+% Unterstützung von Hyperlinks
+\usepackage{hyperref}
+
+% Mathematische Pakete
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{latexsym}
+
+% Kopf- und Fusszeile
+\usepackage[
+	automark,
+	headsepline,
+	footsepline
+	]{scrlayer-scrpage}
+	
+\pagestyle{scrheadings}
+\automark{chapter}
+
+\ifoot[]{}
+\cfoot[]{}
+\ofoot[]{\pagemark}
+
+\ihead[]{\headmark}
+\chead[]{}
+\ohead[]{}
+
+\begin{document}
+% Definiert das Titelblatt
+\begin{titlepage}
+\titlehead{
+	\begin{flushleft}
+		\includegraphics[height=1.5cm]{Logo/oth_logo_neu.eps} \vspace*{2\baselineskip} \\
+	\end{flushleft}
+	\begin{center}
+		\Large \textbf{Ostbayerische Technische Hochschule Regensburg \\
+			Fakultät für Informatik und Mathematik}
+	\end{center}
+	}
+\title{OWASP Top 10}
+\subtitle{Studienarbeit im Kurs Informationssicherheit und Compliance}
+\author{Thomas Pilz\\ 
+		Matrikelnummer: 3180640}
+\publishers{
+	Erstprüfer: Prof. Dr. Rudolf Hackenberg
+}
+\date{\today}
+\end{titlepage}
+
+% Setzt den Titel
+\maketitle
+
+
+%Abbildungs- und Tabellenverzeichnis anzeigen
+\listoffigures
+\listoftables
+% Inhaltsverzeichnis anzeigen
+\tableofcontents
+\newpage
+
+
+
+%Hier kann Begonnen werden mit dem Schreiben
+\chapter{Einleitung}
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+\blindtext
+
+
+%Zum Einbinden des BibTeX Files (wenn dieses vorhanden ist, einfach nachstehend auskommentieren):
+\bibliography{literatur}{\nocite{*}}
+\bibliographystyle{plaindin}
+
+%Definiert und setzt die Eigenständigkeitserklärung
+\chapter*{Eigenständigkeitserklärung}
+Ich erkläre hiermit, dass ich diese Studienarbeit selbständig verfasst, noch nicht anderweitig für Prüfungszwecke vorgelegt, keine anderen als die angegebenen Quellen und Hilfsmittel benutzt, sowie wörtliche und sinngemäße Zitate als solche gekennzeichnet habe.
+%% Abstand und Linie
+\vspace{15mm} \\
+\rule{0.5\textwidth}{0.4pt} \\
+\vspace{5mm}
+Regensburg, den \today
+
+\end{document}
